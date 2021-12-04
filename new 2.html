@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+
+<script>
+
+function printInfo(obj) {
+let info = ""
+for (let key in obj) {
+info += key + ": " + obj[key] + "\n"
+}
+return info
+}
+
+let user = {
+name: "Джон",
+age: 30
+};
+
+user.sayHi = function () {
+alert("Привет!");
+};
+
+user.sayHi();
+
+let customer = {
+name: "Brian",
+age: 40,
+balance: 250,
+WorkPlac: "Apple",
+address: "Hotel"
+}
+alert(printInfo(customer))
+
+let users = {
+names: ["Dilan", "Tomas", "Viliam Potato"]
+}
+let offers = {
+names: ["Apple", "Peach", "Pineapple"]
+}
+let restaurants = {
+names: ["Le Marco", "Manjella", "Porfavora"]
+}
+let task3 = [users, offers, restaurants]
+let index = parseInt(prompt("Что вы хотите вывести: 0. пользователи, 1. заказы, 2. рестораны"))
+alert(task3[index].names.join(", "))
+
+function User(name, isGroupLeader = false) {
+this.name = name;
+this.isGroupLeader = isGroupLeader;
+}
+
+let user1 = new User("Гриша", true);
+alert(user1.name);
+alert(user1.isGroupLeader);
+
+let user2 = new User("Андрей");
+alert(user2.name);
+alert(user2.isGroupLeader);
+
+function Student(name) {
+this.name = name;
+this.sayHi = function () {
+alert("Меня зовут: " + this.name);
+};
+}
+let vasya = new Student("Вася");
+vasya.sayHi();
+
+    </script>
+</body>
+
+</html>
